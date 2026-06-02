@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ResumeAI — Assistente de Resumo Inteligente</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="container">
+
+    <header>
+      <div class="logo-dot"></div>
+      <div class="logo-text">Resume<span>AI</span></div>
+      <span class="badge">Groq API · LLaMA 3.3</span>
+    </header>
+
+    <section class="hero">
+      <h1>Resuma qualquer texto<br>com <em>inteligência artificial</em></h1>
+      <p>Cole um texto, escolha o estilo e a IA extrai os pontos-chave, classifica o tema e gera um resumo claro.</p>
+    </section>
+
+    <div class="card">
+      <div class="card-label">Texto de entrada</div>
+      <textarea id="inputText" placeholder="Cole aqui o texto que deseja resumir...&#10;&#10;Pode ser um artigo, notícia, relatório, e-mail ou qualquer conteúdo textual."></textarea>
+
+      <div class="controls">
+        <div class="select-wrap">
+          <select id="styleSelect">
+            <option value="conciso">Resumo conciso (3–5 frases)</option>
+            <option value="bullet">Pontos-chave em tópicos</option>
+            <option value="executivo">Resumo executivo</option>
+            <option value="didatico">Linguagem simples / didática</option>
+          </select>
+        </div>
+        <button class="btn-run" id="btnRun" onclick="resumir()">
+          <span id="btnText">✦ Resumir</span>
+          <div class="spinner" id="spinner"></div>
+        </button>
+      </div>
+    </div>
+
+    <div class="error-box" id="errorBox"></div>
+
+    <div class="output-section" id="outputSection">
+      <div class="card">
+        <div class="output-header">
+          <div class="output-title">Resultado da IA</div>
+          <button class="btn-copy" onclick="copiar()">Copiar</button>
+        </div>
+        <div class="output-content" id="outputContent"></div>
+        <div class="tags-row" id="tagsRow"></div>
+      </div>
+    </div>
+
+    <footer>
+      ResumeAI · Desenvolvido com Groq API (LLaMA 3.3) · Residência em Software &amp; IA — Porto Digital 2026
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
